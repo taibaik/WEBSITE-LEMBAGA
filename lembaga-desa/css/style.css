@@ -1,0 +1,430 @@
+/* =====================
+   RESET & BASE
+===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: #f6f7f8;
+  color: #333;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+main {
+  flex: 1;
+}
+
+/* Smooth dark mode transition */
+body,
+.navbar,
+footer,
+.card,
+.content,
+.hero,
+.profile-toc,
+table,
+th,
+td {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* =====================
+   NAVBAR (FINAL FIX)
+===================== */
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #2f855a;
+  color: white;
+  position: relative;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.nav-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.menu-btn,
+.dark-btn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: white;
+  cursor: pointer;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.nav-links a.active {
+  font-weight: bold;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+/* =====================
+   HERO
+===================== */
+.hero {
+  padding: 80px 30px;
+  text-align: center;
+  background-color: #e6f4ea;
+}
+
+.hero h1 {
+  font-size: 2.3rem;
+}
+
+.hero p {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+/* =====================
+   CONTENT
+===================== */
+.content {
+  padding: 40px 30px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.content h2 {
+  color: #2f855a;
+  margin-bottom: 10px;
+}
+
+.content p {
+  margin-bottom: 10px;
+}
+
+/* =====================
+   CARDS
+===================== */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  padding: 40px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.15);
+}
+
+.card img {
+  width: 80px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+}
+
+.card h3 {
+  color: #2f855a;
+  margin-bottom: 6px;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.card-info {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  background: #2f855a;
+  color: white;
+  padding: 15px;
+  font-size: 14px;
+  transition: bottom 0.3s ease;
+}
+
+.card:hover .card-info {
+  bottom: 0;
+}
+
+/* =====================
+   PROFILE TOC
+===================== */
+.profile-toc {
+  max-width: 1100px;
+  margin: 20px auto 40px;
+  background: #ffffff;
+  padding: 14px 20px;
+  border-left: 4px solid #2f7d32;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.profile-toc ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.profile-toc a {
+  text-decoration: none;
+  color: #2f7d32;
+  font-weight: 600;
+  transition: transform 0.25s ease;
+}
+
+.profile-toc a:hover {
+  transform: translateY(-2px);
+  text-decoration: underline;
+}
+
+/* =====================
+   BUTTON
+===================== */
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  background-color: #2f855a;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+}
+
+/* =====================
+   DAFTAR HUKUM (CLEAN)
+===================== */
+.hukum-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 14px;
+  margin-top: 30px;
+}
+
+.hukum-table thead {
+  display: none;
+}
+
+.hukum-table tr {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.hukum-table td {
+  padding: 16px 18px;
+  border: none;
+  font-size: 0.95rem;
+}
+
+.hukum-table td:nth-child(1) {
+  font-weight: bold;
+  color: #2f855a;
+  width: 120px;
+}
+
+.hukum-table td:nth-child(4) {
+  text-align: right;
+}
+
+.hukum-table a {
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 8px;
+  color: #2f855a;
+}
+
+.hukum-table a:hover {
+  text-decoration: underline;
+}
+
+/* =====================
+   KONTAK PAGE
+===================== */
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.contact-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+}
+
+.contact-table th,
+.contact-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.contact-table th {
+  width: 160px;
+  text-align: left;
+  background: #f0f8f4;
+  color: #2f855a;
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 320px;
+  border: none;
+  border-radius: 8px;
+}
+
+/* =====================
+   FOOTER
+===================== */
+footer {
+  background-color: #2f855a;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 60px;
+}
+
+/* =====================
+   DARK MODE
+===================== */
+body.dark {
+  background-color: #1f1f1f;
+  color: #eee;
+}
+
+body.dark .navbar,
+body.dark footer {
+  background-color: #1a202c;
+}
+
+body.dark .hero {
+  background-color: #2d3748;
+}
+
+body.dark .card,
+body.dark .contact-table,
+body.dark .hukum-table tr {
+  background-color: #2a2a2a;
+  color: #e5e5e5;
+}
+
+body.dark .card h3,
+body.dark .profile-toc a,
+body.dark .hukum-table td:nth-child(1) {
+  color: #9ae6b4;
+}
+
+body.dark .card-info {
+  background-color: #1a202c;
+}
+
+/* =====================
+   MOBILE
+===================== */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: #2f855a;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+
+  .nav-links.active {
+    max-height: 500px;
+  }
+
+  .nav-links li {
+    text-align: center;
+    padding: 14px 0;
+  }
+
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-map iframe {
+    height: 260px;
+  }
+}
+/* Subtle entrance animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.7s ease;
+}
+
+/* Icon / button micro interaction */
+.dark-btn,
+.menu-btn {
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.dark-btn:hover,
+.menu-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.85;
+}
