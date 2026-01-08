@@ -1,5 +1,8 @@
 @media (max-width: 768px) {
-
+  .gallery-item img {
+    height: 180px;
+  }
+  
   .navbar {
     padding: 15px 20px;
   }

@@ -372,6 +372,60 @@ body.dark .card-info {
   background-color: #1a202c;
 }
 
+body.dark .gallery-item {
+  background: #2a2a2a;
+}
+
+body.dark .gallery-item p {
+  color: #e5e5e5;
+}
+
+/* =====================
+   DARK MODE – PERNYATAAN RESMI
+===================== */
+body.dark .statement-box {
+  background-color: #1f2933;
+  border-left-color: #38a169;
+}
+
+body.dark .statement-box h2 {
+  color: #9ae6b4;
+}
+
+body.dark .statement-box p {
+  color: #e5e7eb;
+}
+
+/* =====================
+   DARK MODE – PROFILE TOC
+===================== */
+body.dark .profile-toc {
+  background-color: #1f2933;
+  border-left-color: #38a169;
+  border-bottom-color: #2a2a2a;
+}
+
+body.dark .profile-toc a {
+  color: #9ae6b4;
+}
+
+body.dark .profile-toc a:hover {
+  color: #c6f6d5;
+}
+
+/* =====================
+   DARK MODE – SECTION DIVIDER
+===================== */
+body.dark .section-divider {
+  background: linear-gradient(
+    to right,
+    transparent,
+    #38a169,
+    transparent
+  );
+  opacity: 0.25;
+}
+
 /* =====================
    MOBILE
 ===================== */
@@ -427,4 +481,57 @@ body.dark .card-info {
 .menu-btn:hover {
   transform: translateY(-2px);
   opacity: 0.85;
+}
+
+/* =====================
+   GALLERY (CONSISTENT SIZE)
+===================== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.gallery-item {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.15);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 220px;          /* 🔴 KUNCI UTAMA */
+  object-fit: cover;      /* crop rapi */
+  display: block;
+}
+
+.gallery-item p {
+  padding: 12px 14px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #2f855a, transparent);
+  margin: 60px auto;
+  max-width: 900px;
+  opacity: 0.4;
+}
+
+/* =====================
+   PERNYATAAN RESMI
+===================== */
+.statement-box {
+  background: #f0f8f4;
+  border-left: 5px solid #2f855a;
 }
